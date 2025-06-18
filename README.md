@@ -71,6 +71,13 @@ Utilizá este simulador en:
 
 ---
 
+## 🛑 Disclaimer legal
+
+Este proyecto fue creado exclusivamente con fines educativos.  
+**⚖️ No nos responsabilizamos por el mal uso del código ni por las consecuencias legales o técnicas derivadas de su uso inapropiado.**
+
+---
+
 ## 🧑‍🏫 Autor
 
 Explicación elaborada por [Sebastian Peinador](https://www.linkedin.com/in/sebastian-j-peinador/) para propósitos didácticos y de investigación en ciberseguridad ofensiva.
@@ -84,7 +91,3 @@ Este material se distribuye bajo la licencia [MIT](LICENSE).
 ---
 
 > Si te resulta útil, ¡no olvides darle ⭐ al repo o compartirlo!
-## 🛑 Disclaimer legal
-
-Este proyecto fue creado exclusivamente con fines educativos.  
-**⚖️ No nos responsabilizamos por el mal uso del código ni por las consecuencias legales o técnicas derivadas de su uso inapropiado.**
