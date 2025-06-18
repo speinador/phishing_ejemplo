@@ -71,22 +71,19 @@ Utilizá este simulador en:
 
 ---
 
-## 👤 Autor
+## 🧑‍🏫 Autor
 
-**Sebastián Peinador**  
-👨‍🏫 Docente y especialista en Ciberseguridad  
-🏥 Ministerio de Salud - Hospital José M. Penna (CABA)  
-📚 CFP36 - Ministerio de Educación (CABA)
+Explicación elaborada por [Sebastian Peinador](https://www.linkedin.com/in/sebastian-j-peinador/) para propósitos didácticos y de investigación en ciberseguridad ofensiva.
 
 ---
 
-## 📢 Contribuciones
+## 📄 Licencia
 
-Se aceptan pull requests que amplíen el material con nuevas simulaciones u opciones visuales.  
-💡 ¡Todo aporte educativo es bienvenido!
+Este material se distribuye bajo la licencia [MIT](LICENSE).
 
 ---
 
+> Si te resulta útil, ¡no olvides darle ⭐ al repo o compartirlo!
 ## 🛑 Disclaimer legal
 
 Este proyecto fue creado exclusivamente con fines educativos.  
